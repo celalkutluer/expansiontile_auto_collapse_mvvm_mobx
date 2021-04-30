@@ -15,14 +15,14 @@ class ExpansionTileView extends StatelessWidget {
           return ListView.builder(
             key: Key('builder ${_vM.selected.toString()}'), //attention
             itemCount: _vM.isHaveData ? 4 : 0,
-            itemBuilder: (context, xxx) {
+            itemBuilder: (context, i) {
               return Observer(builder: (_) {
                 return ExpansionTile(
-                    key: Key(xxx.toString()), //attention
-                    initiallyExpanded: _vM.isExpanded(xxx), //attention
-                    title: Text(xxx.toString()),
-                    onExpansionChanged: (value) => _vM.selectedChange(value, xxx),
-                    children: [Text(xxx.toString() + ' Open :)')]);
+                    key: Key(i.toString()), //attention
+                    initiallyExpanded: _vM.isExpanded(i), //attention
+                    title: Text(i.toString()),
+                    onExpansionChanged: (value) => _vM.selectedChange(value, i),
+                    children: [Text(i.toString() + ' Open :)')]);
               });
             },
           );
